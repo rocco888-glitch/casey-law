@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casey Law Office | Phil Casey — Criminal Defence Lawyer, Kingston Ontario</title>
+<meta name="description" content="Phil Casey — Kingston's trusted criminal defence lawyer. 4.9 stars, 33 reviews. Fighting for your rights with relentless dedication. Call (613) 546-6411.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #080A0C;
+  --dark: #0F1318;
+  --dark-mid: #161C24;
+  --card: #1A2130;
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.14);
+  --red: #C0392B;
+  --red-bright: #E74C3C;
+  --red-muted: rgba(192,57,43,0.15);
+  --white: #FFFFFF;
+  --off-white: #F0EDE8;
+  --text-primary: #EEE9E1;
+  --text-secondary: rgba(238,233,225,0.55);
+  --text-muted: rgba(238,233,225,0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--red); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+  height: 68px;
+  background: rgba(8,10,12,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--white);
+}
+.nav-logo span { color: var(--red); }
+.nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-secondary); text-decoration: none;
+  transition: color 0.2s; font-weight: 500;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-call {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--red); color: var(--white) !important;
+  padding: 9px 20px; font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.nav-call:hover { background: var(--red-bright) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex; align-items: flex-end;
+  padding: 0 6% 10vh;
+  position: relative; overflow: hidden;
+}
+
+/* Diagonal accent */
+.hero::before {
+  content: '';
+  position: absolute; top: 0; right: -10%;
+  width: 55%; height: 100%;
+  background: linear-gradient(160deg, transparent 40%, rgba(192,57,43,0.04) 100%);
+  pointer-events: none;
+}
+
+/* Large decorative text */
+.hero-bg-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(160px, 22vw, 280px);
+  font-weight: 900; font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+}
+
+/* Vertical red line */
+.hero-line {
+  position: absolute;
+  top: 0; left: 6%;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--red) 30%, var(--red) 70%, transparent);
+  opacity: 0.4;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1200px; width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 32px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red); font-weight: 500;
+}
+.hero-tag::before {
+  content: '';
+  display: block; width: 24px; height: 1px;
+  background: var(--red);
+}
+
+h1.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 8vw, 112px);
+  font-weight: 900; line-height: 0.92;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+h1.hero-headline em {
+  font-style: italic; color: var(--red);
+  display: block;
+}
+
+.hero-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 400; font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 44px; line-height: 1.2;
+}
+
+.hero-bottom {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap; gap: 32px;
+}
+.hero-desc {
+  font-size: 17px; color: var(--text-secondary);
+  max-width: 440px; line-height: 1.8; font-weight: 300;
+}
+.hero-desc strong { color: var(--text-primary); font-weight: 500; }
+
+.hero-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.btn-hero-primary {
+  display: inline-block;
+  background: var(--red); color: var(--white);
+  padding: 16px 40px; text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-hero-primary:hover { background: var(--red-bright); }
+.btn-hero-ghost {
+  display: inline-block;
+  border: 1px solid var(--border-strong); color: var(--text-secondary);
+  padding: 15px 40px; text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn-hero-ghost:hover { border-color: var(--white); color: var(--white); }
+
+.hero-rating {
+  position: absolute; top: 100px; right: 6%;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+}
+.rating-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px; font-weight: 900; color: var(--white); line-height: 1;
+}
+.rating-stars { color: var(--red); font-size: 18px; letter-spacing: 4px; }
+.rating-count { font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* TICKER */
+.ticker {
+  background: var(--red);
+  padding: 14px 0; overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex; gap: 0;
+  animation: ticker 20s linear infinite;
+}
+.ticker-item {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9); font-weight: 500;
+  padding: 0 40px;
+}
+.ticker-item::after {
+  content: '·';
+  margin-left: 40px; opacity: 0.5;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SECTIONS */
+section { padding: 120px 6%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red); font-weight: 600;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 24px;
+}
+.label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--red); }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 700; line-height: 1.1;
+  color: var(--white); margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--red); }
+
+/* ABOUT */
+.about { background: var(--dark); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 100px; align-items: center;
+}
+.about-quote-block {
+  position: relative; padding: 48px;
+  border-left: 3px solid var(--red);
+  background: var(--dark-mid);
+}
+.quote-giant {
+  font-family: 'Playfair Display', serif;
+  font-size: 120px; color: var(--red);
+  opacity: 0.15; line-height: 0.7;
+  position: absolute; top: 20px; left: 36px;
+  font-weight: 900; pointer-events: none;
+}
+.about-quote-block blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-style: italic;
+  color: var(--text-primary); line-height: 1.65;
+  position: relative; z-index: 1; margin-bottom: 24px;
+}
+.quote-source {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--red); font-weight: 500;
+}
+.about-text p {
+  font-size: 17px; color: var(--text-secondary);
+  line-height: 1.85; margin-bottom: 20px; font-weight: 300;
+}
+.about-text p strong { color: var(--text-primary); font-weight: 500; }
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border);
+  margin-top: 40px; border: 1px solid var(--border);
+}
+.astat {
+  background: var(--dark); padding: 28px 24px;
+}
+.astat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px; font-weight: 700; color: var(--red);
+  line-height: 1; margin-bottom: 6px;
+}
+.astat-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500;
+}
+
+/* PRACTICE AREAS */
+.practice { background: var(--black); }
+.practice-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; margin-bottom: 64px; flex-wrap: wrap; gap: 24px;
+}
+.practice-desc { font-size: 17px; color: var(--text-secondary); max-width: 380px; font-weight: 300; }
+.practice-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+}
+.practice-card {
+  background: var(--dark);
+  padding: 44px 36px;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+.practice-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--red);
+  transition: height 0.4s ease;
+}
+.practice-card:hover { background: var(--dark-mid); }
+.practice-card:hover::after { height: 100%; }
+.practice-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px; font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  line-height: 1; margin-bottom: 24px;
+  user-select: none;
+}
+.practice-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--white); margin-bottom: 14px;
+}
+.practice-card p {
+  font-size: 14px; color: var(--text-secondary);
+  line-height: 1.75; font-weight: 300;
+}
+
+/* REVIEWS */
+.reviews { background: var(--dark); }
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 64px;
+}
+.review-card {
+  background: var(--dark-mid);
+  border: 1px solid var(--border);
+  padding: 36px; position: relative;
+  transition: border-color 0.3s;
+}
+.review-card:hover { border-color: rgba(192,57,43,0.3); }
+.review-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 20px;
+}
+.review-stars { color: var(--red); font-size: 13px; letter-spacing: 3px; }
+.review-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--red); background: var(--red-muted);
+  padding: 4px 10px; font-weight: 600;
+}
+.review-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-style: italic;
+  color: var(--text-primary); line-height: 1.7;
+  margin-bottom: 24px;
+}
+.review-author {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500;
+}
+.reviews-footer {
+  margin-top: 48px; padding-top: 48px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.reviews-overall {
+  display: flex; align-items: center; gap: 20px;
+}
+.reviews-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 900; color: var(--white); line-height: 1;
+}
+.reviews-breakdown { display: flex; flex-direction: column; gap: 4px; }
+.reviews-breakdown .stars { color: var(--red); font-size: 20px; letter-spacing: 3px; }
+.reviews-breakdown p { font-size: 13px; color: var(--text-muted); }
+
+/* PROCESS */
+.process { background: var(--black); }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-top: 64px; position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 32px; left: 4%; right: 4%;
+  height: 1px; background: var(--border-strong);
+}
+.process-step { padding: 0 24px 0 0; position: relative; }
+.step-circle {
+  width: 64px; height: 64px;
+  border: 1px solid var(--border-strong);
+  background: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 32px; position: relative; z-index: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700; color: var(--red);
+  transition: background 0.3s, border-color 0.3s;
+}
+.process-step:hover .step-circle {
+  background: var(--red-muted);
+  border-color: var(--red);
+}
+.process-step h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--white); margin-bottom: 12px;
+}
+.process-step p { font-size: 14px; color: var(--text-secondary); font-weight: 300; line-height: 1.7; }
+
+/* CONTACT */
+.contact { background: var(--dark); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 80px; align-items: start;
+}
+.contact-left h2 { margin-bottom: 16px; }
+.contact-left p { font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-bottom: 48px; line-height: 1.8; }
+.contact-details { display: flex; flex-direction: column; gap: 20px; }
+.contact-detail {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  background: var(--dark-mid);
+  transition: border-color 0.2s;
+}
+.contact-detail:hover { border-color: var(--red); }
+.detail-icon {
+  font-size: 20px; min-width: 28px;
+  margin-top: 2px;
+}
+.detail-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 600; margin-bottom: 4px;
+}
+.detail-value a, .detail-value p {
+  font-size: 16px; color: var(--text-primary);
+  text-decoration: none; font-weight: 400;
+}
+.detail-value a:hover { color: var(--red); }
+
+/* FORM */
+.contact-form {
+  background: var(--dark-mid);
+  border: 1px solid var(--border);
+  padding: 48px 44px;
+}
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--white); margin-bottom: 36px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fg { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.fg label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 600;
+}
+.fg input, .fg select, .fg textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 13px 16px;
+  font-family: 'Barlow', sans-serif; font-size: 15px; font-weight: 300;
+  outline: none; transition: border-color 0.2s;
+  appearance: none; border-radius: 0;
+}
+.fg input::placeholder, .fg textarea::placeholder { color: var(--text-muted); }
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--red); }
+.fg select option { background: var(--dark-mid); }
+.fg textarea { min-height: 100px; resize: vertical; }
+.form-btn {
+  width: 100%; background: var(--red); color: var(--white);
+  border: none; padding: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; cursor: pointer;
+  transition: background 0.2s; margin-top: 8px;
+}
+.form-btn:hover { background: var(--red-bright); }
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  padding: 48px 6%;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 20px;
+}
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--white);
+}
+.footer-logo span { color: var(--red); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  font-weight: 500;
+}
+.footer-links a:hover { color: var(--red); }
+.footer-copy {
+  font-size: 12px; color: var(--text-muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.anim.visible { opacity: 1; transform: translateY(0); }
+
+.hero-tag { animation: fadeUp 0.6s ease forwards; }
+h1.hero-headline { animation: fadeUp 0.7s 0.1s ease forwards; opacity: 0; }
+.hero-sub { animation: fadeUp 0.7s 0.2s ease forwards; opacity: 0; }
+.hero-bottom { animation: fadeUp 0.7s 0.35s ease forwards; opacity: 0; }
+.hero-rating { animation: fadeUp 0.7s 0.5s ease forwards; opacity: 0; }
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .practice-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-rating { position: static; margin-bottom: 40px; align-items: flex-start; }
+  .hero { align-items: flex-start; padding-top: 140px; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps::before { display: none; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .hero-actions { align-items: flex-start; }
+  section { padding: 80px 5%; }
+}
+@media (max-width: 500px) {
+  .form-row { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Casey <span>Law</span> Office</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#practice">Practice Areas</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:6135466411" class="nav-call">(613) 546-6411</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-bg-text">Casey</div>
+
+  <div class="hero-rating">
+    <div class="rating-num">4.9</div>
+    <div class="rating-stars">★★★★★</div>
+    <div class="rating-count">33 Google Reviews</div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-tag">Criminal Defence · Kingston, Ontario</div>
+    <h1 class="hero-headline">
+      Phil Casey.
+      <em>Your Defence.</em>
+    </h1>
+    <p class="hero-sub">When the stakes are highest,<br>experience is everything.</p>
+
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        <strong>Phil Casey</strong> is Kingston's trusted criminal defence lawyer — relentless in court, available after hours, and genuinely invested in every client's outcome.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:6135466411" class="btn-hero-primary">Call Now — (613) 546-6411</a>
+        <a href="#practice" class="btn-hero-ghost">View Practice Areas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Criminal Defence</span>
+    <span class="ticker-item">Available After Hours</span>
+    <span class="ticker-item">Kingston Ontario</span>
+    <span class="ticker-item">4.9 Stars · 33 Reviews</span>
+    <span class="ticker-item">Proven Track Record</span>
+    <span class="ticker-item">Free Consultation</span>
+    <span class="ticker-item">Criminal Defence</span>
+    <span class="ticker-item">Available After Hours</span>
+    <span class="ticker-item">Kingston Ontario</span>
+    <span class="ticker-item">4.9 Stars · 33 Reviews</span>
+    <span class="ticker-item">Proven Track Record</span>
+    <span class="ticker-item">Free Consultation</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-quote-block anim">
+        <span class="quote-giant">"</span>
+        <blockquote>"Phil Casey truly goes above and beyond for his clients. He has been my personal lawyer for 3 different proceedings. All 3 I won in Criminal Court."</blockquote>
+        <div class="quote-source">Thomas Gumersell · 3x Client · Criminal Court</div>
+      </div>
+      <div>
+        <div class="label">About Phil Casey</div>
+        <h2 class="section-title">Relentless.<br><em>Trusted.</em> Present.</h2>
+        <div class="about-text">
+          <p>Phil Casey isn't just a lawyer — he's the person who <strong>calls you after a long day in court to check in</strong>. He takes cases others won't, fights longer than expected, and treats every client like the outcome matters personally.</p>
+          <p>Based out of <strong>Kingston, Ontario</strong>, Phil has built his practice on a single principle: your freedom and future deserve the most committed defence possible.</p>
+        </div>
+        <div class="about-stats">
+          <div class="astat">
+            <div class="astat-num">4.9</div>
+            <div class="astat-label">Google Rating</div>
+          </div>
+          <div class="astat">
+            <div class="astat-num">33</div>
+            <div class="astat-label">Client Reviews</div>
+          </div>
+          <div class="astat">
+            <div class="astat-num">3×</div>
+            <div class="astat-label">Repeat Clients</div>
+          </div>
+          <div class="astat">
+            <div class="astat-num">24h</div>
+            <div class="astat-label">Availability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice" id="practice">
+  <div class="section-inner">
+    <div class="practice-header">
+      <div>
+        <div class="label">What We Handle</div>
+        <h2 class="section-title">Practice <em>Areas</em></h2>
+      </div>
+      <p class="practice-desc">From first appearance to final verdict — comprehensive criminal defence across Ontario courts.</p>
+    </div>
+    <div class="practice-grid">
+      <div class="practice-card anim">
+        <div class="practice-num">01</div>
+        <h3>Criminal Defence</h3>
+        <p>Assault, theft, fraud, weapons charges — full representation from arrest through trial with aggressive, strategic defence.</p>
+      </div>
+      <div class="practice-card anim">
+        <div class="practice-num">02</div>
+        <h3>DUI & Impaired Driving</h3>
+        <p>Challenging breathalyzer results, police procedure, and Crown evidence to protect your licence and your record.</p>
+      </div>
+      <div class="practice-card anim">
+        <div class="practice-num">03</div>
+        <h3>Drug Offences</h3>
+        <p>Possession, trafficking, and production charges handled with thorough knowledge of Charter rights and search and seizure law.</p>
+      </div>
+      <div class="practice-card anim">
+        <div class="practice-num">04</div>
+        <h3>Bail Hearings</h3>
+        <p>Immediate representation at bail hearings — because the first 24 hours can define the rest of your case.</p>
+      </div>
+      <div class="practice-card anim">
+        <div class="practice-num">05</div>
+        <h3>Sexual Offences</h3>
+        <p>Sensitive, strategic, and confidential defence for allegations that carry severe consequences. Every detail matters.</p>
+      </div>
+      <div class="practice-card anim">
+        <div class="practice-num">06</div>
+        <h3>Appeals & Reviews</h3>
+        <p>If you've been convicted, it may not be over. Phil reviews trial records to identify grounds for appeal and wrongful convictions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <div class="label">Client Testimonials</div>
+    <h2 class="section-title">What clients <em>say</em></h2>
+    <div class="reviews-grid">
+      <div class="review-card anim">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-tag">Criminal</div>
+        </div>
+        <p class="review-text">"He was supportive, knowledgeable, and truly cared about my case. His dedication made a big difference. The process was long but justice prevailed."</p>
+        <div class="review-author">Mhmd Ahmad · 4 months ago</div>
+      </div>
+      <div class="review-card anim">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-tag">3× Client</div>
+        </div>
+        <p class="review-text">"Phil has been my personal lawyer for 3 different proceedings. All 3 I won in Criminal Court. I trust no one other than Phil Casey to handle my legal matters."</p>
+        <div class="review-author">Thomas Gumersell · Repeat Client</div>
+      </div>
+      <div class="review-card anim">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-tag">Attentive</div>
+        </div>
+        <p class="review-text">"He was incredibly helpful and attentive. I could tell he really cared about me and my situation. He was ready to speak with me and set me at ease immediately."</p>
+        <div class="review-author">Jade Serran · 1 year ago</div>
+      </div>
+    </div>
+    <div class="reviews-footer">
+      <div class="reviews-overall">
+        <div class="reviews-big-num">4.9</div>
+        <div class="reviews-breakdown">
+          <div class="stars">★★★★★</div>
+          <p>33 Reviews on Google</p>
+        </div>
+      </div>
+      <a href="tel:6135466411" class="btn-hero-primary">Get Your Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-inner">
+    <div class="label">How It Works</div>
+    <h2 class="section-title">From call to <em>courtroom</em></h2>
+    <div class="process-steps">
+      <div class="process-step anim">
+        <div class="step-circle">1</div>
+        <h4>Call Phil Directly</h4>
+        <p>Reach Phil any time — including nights and weekends. Your first call is free and completely confidential.</p>
+      </div>
+      <div class="process-step anim">
+        <div class="step-circle">2</div>
+        <h4>Case Review</h4>
+        <p>Phil listens, asks the right questions, and gives you an honest assessment of where you stand and your options.</p>
+      </div>
+      <div class="process-step anim">
+        <div class="step-circle">3</div>
+        <h4>Strategy Built</h4>
+        <p>A defence plan tailored to your specific charges, circumstances, and goals — built to challenge every weakness in the Crown's case.</p>
+      </div>
+      <div class="process-step anim">
+        <div class="step-circle">4</div>
+        <h4>Full Representation</h4>
+        <p>Phil handles everything — bail, motions, trial, negotiations — so you're never facing the system alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="label">Contact</div>
+        <h2 class="section-title">Talk to Phil <em>today</em></h2>
+        <p>Don't wait. In criminal law, early action matters. Phil is available and ready to hear your situation — day or night.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="detail-icon">📞</div>
+            <div>
+              <div class="detail-label">Phone</div>
+              <div class="detail-value"><a href="tel:6135466411">(613) 546-6411</a></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="detail-icon">📍</div>
+            <div>
+              <div class="detail-label">Address</div>
+              <div class="detail-value"><p>11 Princess St #301<br>Kingston, ON K7K 2X5</p></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="detail-icon">🕐</div>
+            <div>
+              <div class="detail-label">Office Hours</div>
+              <div class="detail-value"><p>Mon–Fri: 9:00 AM – 4:30 PM<br>After-hours available by phone</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form anim">
+        <h3>Send a Message</h3>
+        <div class="form-row">
+          <div class="fg">
+            <label>First Name</label>
+            <input type="text" placeholder="John">
+          </div>
+          <div class="fg">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(613) 000-0000">
+        </div>
+        <div class="fg">
+          <label>Charge / Matter Type</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Criminal Defence</option>
+            <option>DUI / Impaired Driving</option>
+            <option>Drug Offences</option>
+            <option>Bail Hearing</option>
+            <option>Sexual Offences</option>
+            <option>Appeal / Review</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Brief Description</label>
+          <textarea placeholder="Briefly describe your situation. All communication is confidential."></textarea>
+        </div>
+        <button class="form-btn" onclick="alert('Message received. Phil will be in touch shortly. For urgent matters, call (613) 546-6411 directly.')">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Casey <span>Law</span> Office</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#practice">Practice</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2025 Casey Law Office. Kingston, Ontario.</p>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
